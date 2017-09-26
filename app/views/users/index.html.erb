@@ -1,0 +1,24 @@
+<h1>User list:</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Birthday</th>
+    <th>Female year</th>
+    <th>Phone</th>
+    <th>Address</th>
+  </tr>
+
+  <% @users.each do |book| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.birthday %></td>
+      <td><%= user.is_female %></td>
+      <td><%= user.phone %></td>
+      <td><%= user.address %></td>
+      <td><%= link_to 'Show', book_path(book) %></td>
+      <td><%= link_to 'Edit', edit_book_path(book) %></td>
+      <td><%= link_to 'Destroy', book_path(book), method: :delete, data: {confirm: "Are you sure?"} %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to "Create new user", new_user_path %>
