@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+Đăng nhập bằng tài khoản:
+email: pht2707@gmail.com
+pass: 123456
