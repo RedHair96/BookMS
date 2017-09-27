@@ -16,7 +16,7 @@ class BooksController < ApplicationController
   end
 
   def create
-    @user = User.find(1)
+    @user = User.find(3)
     @book = @user.books.new(book_params)
     if @book.save
       redirect_to @book
