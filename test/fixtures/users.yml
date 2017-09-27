@@ -13,3 +13,8 @@ two:
   is_female: false
   phone: MyString
   address: MyString
+
+michael:
+  name: Michael Example
+  email: michael@example.com
+  password_digest: <%= User.digest('password') %>
