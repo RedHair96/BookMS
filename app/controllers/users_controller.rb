@@ -42,6 +42,7 @@ class UsersController < ApplicationController
 
   private
   def book_params
-    params.require(:user).permit(:name, :birthday, :is_female, :phone, :address)
+    params.require(:user).permit(:name, :birthday, :is_female, :phone, :email,
+                                 :address, :password, :password_confirmation)
   end
 end

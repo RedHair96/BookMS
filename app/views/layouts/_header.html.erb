@@ -4,9 +4,10 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", '/' %></li>
-        <li><%= link_to "Book", '/books' %></li>
-        <li><%= link_to "User", '/users' %></li>
-        <li><%= link_to "Login", '/login' %></li>
+        <li><%= link_to "Book", books_path %></li>
+        <li><%= link_to "User", users_path %></li>
+        <li><%= link_to "Sign In", '/signin' %></li>
+        <li><%= link_to "Sign Up", new_user_path %></li>
       </ul>
     </nav>
   </div>
