@@ -1,16 +1,49 @@
-<%= form_for @user do |f| %>
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      The form contains <%= pluralize(@user.errors.count, "error") %>.
+    </div>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @user, url: '/signup' do |f| %>
   <p>
-    <%= f.label :name %><br>
+    <%= f.label :email %>
+    <span class="require">*</span> <br>
+    <%= f.email_field :email %>
+
+  </p>
+
+  <p>
+    <%= f.label :password %>
+    <span class="require">*</span> <br>
+    <%= f.password_field :password %>
+  </p>
+
+  <p>
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <span class="require">*</span> <br>
+    <%= f.password_field :password_confirmation %>
+  </p>
+
+  <p>
+    <%= f.label :name %>
+    <span class="require">*</span> <br>
     <%= f.text_field :name %>
   </p>
 
   <p>
-    <%= f.label :birthday %><br>
-    <%= f.date_field :birthday %>
+    <%= f.label :birthday %> <br>
+    <%= f.date_field :birthday%>
   </p>
 
   <p>
-    Female: <%= f.check_box :is_female %><br>
+    <%= f.label :female %> <%= f.check_box :is_female %><br>
   </p>
 
   <p>
@@ -24,6 +57,6 @@
   </p>
 
   <p>
-    <%= f.submit %>
+    <%= f.submit "Create my account", class: "btn btn-primary" %>
   </p>
 <% end %>
