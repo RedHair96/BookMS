@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(book_params)
     if @user.save
+      sign_in @user
       redirect_to @user
       flash[:success] = "Welcome to the BookMS!"
     else
