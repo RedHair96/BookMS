@@ -33,7 +33,7 @@ module SessionsHelper
 
   def sign_out
     forget(current_user)
-    session.delete(:user_id) if signed_in?
+    session.delete(:user_id)
     @current_user = nil
   end
 end

@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
   def new
-
+    if signed_in?
+      sign_out
+    end
   end
 
   def create
@@ -20,7 +22,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    sign_out
+    if signed_in?
+      sign_out
+    end
     redirect_to signin_path
   end
 end
