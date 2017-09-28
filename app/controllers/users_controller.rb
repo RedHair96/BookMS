@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(book_params)
+    @user.email =
     if @user.save
       sign_in @user
       redirect_to @user
