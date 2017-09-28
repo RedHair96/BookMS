@@ -36,4 +36,13 @@ module SessionsHelper
     session.delete(:user_id)
     @current_user = nil
   end
+
+  def store_previous_url
+    session[:pre_url] = request.original_url if request.get?
+  end
+
+  def redirect_to_previous_url(default)
+    redirect_to(session[:pre_url] || default)
+    session.delete(:pre_url)
+  end
 end
